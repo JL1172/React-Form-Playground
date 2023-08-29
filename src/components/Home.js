@@ -1,7 +1,12 @@
+import { StyledHome } from "./styledComps"
+
 export default function Home(props) {
     return (
-        <div>
-            Home
-        </div>
+        <StyledHome>
+            <div>H</div>
+            <div>o</div>
+            <div>m</div>
+            <div>e</div>
+        </StyledHome>
     )
 }
