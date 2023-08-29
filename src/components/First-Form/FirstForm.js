@@ -1,6 +1,8 @@
 import { StyledForm } from "../styledComps"
 import { useForm } from "./ffhooks/useForm"
-import Reactstrap,{Form,FormGroup,Input,Label} from "reactstrap"
+import Reactstrap,{Form,FormGroup,Input,Label} from "reactstrap";
+import { useEffect,useState } from "react";
+import { states } from "./fifteyState";
 
 const initialValue = {
     fname : "",
@@ -13,6 +15,8 @@ const initialValue = {
 
 export default function FirstForm(props) {
     const [data,change,submit] = useForm("Form-1",initialValue)
+    const [state,setState] = useState(states); 
+    
     return (
         <StyledForm>
             <main>
@@ -38,6 +42,15 @@ export default function FirstForm(props) {
                     <FormGroup floating>
                     <Input type="email" placeholder="email@email.com" id="email" name="email" value={data.email} onChange={change}/>
                     <Label htmlFor="email">Email</Label>
+                    </FormGroup>
+                    <FormGroup row>
+                        <Label htmlFor="state">Select State</Label>
+                        <Input name = "state" onChange={change} value = {data.state} id = "state" type = "select">
+                            <option value = "">Select State</option>
+                            {state.map((n,i)=> {
+                               return <option key = {i} value = {n}>{n}</option>
+                            })}
+                        </Input>
                     </FormGroup>
                 </Form>
             </main>
