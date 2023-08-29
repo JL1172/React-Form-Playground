@@ -136,3 +136,72 @@ input {
     }
 }
 `
+
+export const StyledForm = styled.div`
+height : 100vh;
+display  : flex;
+flex-direction  : column;
+justify-content : center;
+align-items : center;
+main {
+    border : 2px solid black;
+    width : 40rem;
+    height : 40rem;
+    h3 {
+        text-align : center;
+        margin-bottom : 5rem;
+    }
+div {
+    display : flex;
+    justify-content  :space-evenly;
+   section {
+    border-top : 4px solid lightgray;
+    border-bottom : 4px solid lightgray;
+    padding : 1rem;
+    border-radius : 10rem;
+    z-index : 1;
+   }
+   article:nth-of-type(1) {
+    border-bottom : 2px solid lightgray;
+    width : 105px;
+    transform : translateX(-6px);
+    position :absolute;
+    top :23.5rem;
+    right : 51rem;
+    z-index : 2;
+   }
+   article:nth-of-type(3) {
+    border-bottom : 2px solid lightgray;
+    width : 105px;
+    transform : translateX(-10px);
+    position :absolute;
+    top :23.5rem;
+    left : 51rem;
+    z-index : 2;
+   }
+   article:nth-of-type(2) {
+    border-bottom : 2px solid lightgray;
+    width : 105px;
+    transform : translateX(-5.5px);
+    position :absolute;
+    top :24.5rem;
+    right : 51rem;
+    z-index : 2;
+   }
+   article:nth-of-type(4) {
+    border-bottom : 2px solid lightgray;
+    width : 105px;
+    transform : translateX(-10px);
+    position :absolute;
+    top :24.5rem;
+    left : 51rem;
+    z-index : 2;
+   }
+}
+
+form {
+    display : flex;
+    flex-direction  : column;
+}
+}
+`
