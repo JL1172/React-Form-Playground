@@ -12,7 +12,7 @@ export default function App() {
   return (
     <div>
       <StyledHeader>
-      <Link to = "/">A Comprehensive Repo of Forms</Link>
+      <Link to = "/"> <img src = "https://img.icons8.com/?size=512&id=i6fZC6wuprSu&format=png"/> Comprehensive Repo of Forms</Link>
       </StyledHeader>
       <Routes>
         <Route path = "/" 

@@ -48,6 +48,9 @@ border-bottom : 4px solid gray;
 display : flex;
 justify-content : flex-start;
 align-items : flex-end;
+img {
+    width : 50px;
+}
 a {
     color : white;
     text-decoration : none;
