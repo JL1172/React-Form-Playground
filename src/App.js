@@ -18,8 +18,8 @@ export default function App() {
       <Routes>
         <Route path = "/" 
         element = {<Home visible = {visible} setVisible = {setVisible} />}/>
-        <Route path = "form-1" element = {<FirstForm />} />
-        <Route path = "form-2" element = {<SecondForm/>} />
+        <Route path = "form-1/*" element = {<FirstForm />} />
+        <Route path = "form-2/*" element = {<SecondForm/>} />
       </Routes>
     </div>
   )

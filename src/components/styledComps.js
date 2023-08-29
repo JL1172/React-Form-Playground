@@ -150,58 +150,33 @@ main {
     h3 {
         text-align : center;
         margin-bottom : 5rem;
+        padding-top  :2rem;
     }
-div {
+>div {
     display : flex;
     justify-content  :space-evenly;
+    border-bottom : 1px solid lightgray;
+    padding-bottom : 1rem;
    section {
-    border-top : 4px solid lightgray;
-    border-bottom : 4px solid lightgray;
+    border : 2px solid lightgray;
     padding : 1rem;
     border-radius : 10rem;
     z-index : 1;
    }
-   article:nth-of-type(1) {
-    border-bottom : 2px solid lightgray;
-    width : 105px;
-    transform : translateX(-6px);
-    position :absolute;
-    top :23.5rem;
-    right : 51rem;
-    z-index : 2;
-   }
-   article:nth-of-type(3) {
-    border-bottom : 2px solid lightgray;
-    width : 105px;
-    transform : translateX(-10px);
-    position :absolute;
-    top :23.5rem;
-    left : 51rem;
-    z-index : 2;
-   }
-   article:nth-of-type(2) {
-    border-bottom : 2px solid lightgray;
-    width : 105px;
-    transform : translateX(-5.5px);
-    position :absolute;
-    top :24.5rem;
-    right : 51rem;
-    z-index : 2;
-   }
-   article:nth-of-type(4) {
-    border-bottom : 2px solid lightgray;
-    width : 105px;
-    transform : translateX(-10px);
-    position :absolute;
-    top :24.5rem;
-    left : 51rem;
-    z-index : 2;
-   }
 }
 
 form {
+    margin-top : 3rem;
     display : flex;
     flex-direction  : column;
+    align-items : center;
+    
+    input, label {
+        margin : 1rem;
+    }
+    select {
+        width : 20rem;
+    }
 }
 }
 `
