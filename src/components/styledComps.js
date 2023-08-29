@@ -46,12 +46,13 @@ background-color : rgb(39, 39, 39);
 height : 5rem;
 border-bottom : 4px solid gray;
 display : flex;
-justify-content : space-around;
+justify-content : flex-start;
 align-items : flex-end;
 a {
     color : white;
     text-decoration : none;
     font-size : 30px;
+    margin-left : 3rem;
 }
 `
 export const StyledHome = styled.div`
