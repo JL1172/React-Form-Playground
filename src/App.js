@@ -5,6 +5,7 @@ import FirstForm from "./components/First-Form/FirstForm";
 import {StyledHeader} from "./components/styledComps";
 import {useState} from "react"; 
 import { useVisible } from "./components/mainHooks/useVisible";
+import SecondForm from "./components/Second-Form/SecondForm";
 
 const initial = false;
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
         <Route path = "/" 
         element = {<Home visible = {visible} setVisible = {setVisible} />}/>
         <Route path = "form-1" element = {<FirstForm />} />
+        <Route path = "form-2" element = {<SecondForm/>} />
       </Routes>
     </div>
   )

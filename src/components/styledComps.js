@@ -69,6 +69,30 @@ display : flex;
 justify-content : center;
 align-items : center;
 flex-direction : column;
+section {
+    width : 15rem;
+    height : fit-content;
+    margin-top : 4rem;
+    display : flex;
+    justify-content  : space-between;
+    font-size : 25px;
+    a {
+        background-color : rgb(157, 168, 206);
+        outline : 2px solid rgb(39, 39, 39);
+        color : white;
+        text-decoration : none;
+        border-radius : 20px;
+        padding : .3rem;
+        &:hover {
+            color :  rgb(157, 168, 206);
+            background-color : white;
+            transform : scale(1.1);
+        }
+        &:active {
+            animation : ${activekf} .3s ease-in-out forwards;
+        }
+    }
+}
 div {
     display : flex;
     margin-bottom : 3rem;
