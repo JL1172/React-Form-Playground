@@ -2,6 +2,7 @@ import { StyledForm } from "../styledComps"
 import { useForm } from "./ffhooks/useForm"
 import Reactstrap, { Form, FormGroup, Input, Label } from "reactstrap";
 import { useEffect, useState } from "react";
+import { useFirst } from "./ffhooks/useFirst";
 import { states } from "./fifteyState";
 import { useNavigate } from "react-router-dom";
 import { Routes, Route, Link } from "react-router-dom";
@@ -13,16 +14,19 @@ const initialValue = {
     state: "",
     username: "",
     password: "",
+}
+
+const initialPageData = {
     firstPage: true,
     secondPage: false,
     thirdPage: false,
 }
 
 export default function FirstForm(props) {
-    const [data, change, submit, navigateBack, navigateForward, navigateLast,navigateToSecond] = useForm("Form-1", initialValue)
-    const [state, setState] = useState(states);
-
-
+    const [data, change, submit] = useForm("Form-1", initialValue)
+    const [pageData,setPageData,changePageBack,changePageToLast,
+        changePageToSecond] = useFirst("First",initialPageData)
+    
     return (
         <StyledForm>
             <main>
@@ -33,7 +37,7 @@ export default function FirstForm(props) {
                     <section>Profile</section>
                 </div>
                 <Form onSubmit={submit}>
-                    {data.firstPage && <div>
+                    {pageData.firstPage && <div>
                         <FormGroup floating>
                             <Input type="text" placeholder="first name" id="fname" name="fname" value={data.fname} onChange={change} />
                             <Label htmlFor="fname">First Name</Label>
@@ -43,10 +47,10 @@ export default function FirstForm(props) {
                             <Label htmlFor="lname">Last Name</Label>
                         </FormGroup>
                         <div id = "firstPageButton">
-                        <button onClick={navigateForward}>Next</button>
+                        <button onClick={setPageData}>Next</button>
                         </div>
                     </div>}
-                    {data.secondPage &&
+                    {pageData.secondPage &&
                         <div>
                             <Routes>
                                 <Route path="contact" element={
@@ -58,7 +62,7 @@ export default function FirstForm(props) {
                                         <FormGroup row>
                                             <Input name="state" onChange={change} value={data.state} id="state" type="select">
                                                 <option value="">Select State</option>
-                                                {state.map((n, i) => {
+                                                {states.map((n, i) => {
                                                     return <option key={i} value={n}>{n}</option>
                                                 })}
                                             </Input>
@@ -66,12 +70,12 @@ export default function FirstForm(props) {
                                 } />
                             </Routes>
                             <div id = "secondPageButtons">
-                            <button onClick={navigateBack}>Back</button>
-                            <button onClick={navigateLast}>Next</button>
+                            <button onClick={changePageBack}>Back</button>
+                            <button onClick={changePageToLast}>Next</button>
                             </div>
                             </div>
                     }
-                    {data.thirdPage &&
+                    {pageData.thirdPage &&
                         <Routes>
                             <Route path="profile" element={<div>
                                 <FormGroup floating>
@@ -83,7 +87,7 @@ export default function FirstForm(props) {
                                 <Label htmlFor="password">password</Label>
                                 </FormGroup>
                                 <div id = "thirdPageButtons">
-                                <button onClick={navigateToSecond}>Back</button>
+                                <button onClick={changePageToSecond}>Back</button>
                                 <input type = "submit" id = "submit" />
                                 </div>
                             </div>} />

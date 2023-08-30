@@ -1,10 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useLocalStorage } from "./useLocalStorage";
 
 export const useForm = (key, initialValue) => {
-    const [data, setData] = useState(initialValue);
-
+    const [data, setData,navigateBack,navigateForward,navigateLast,navigateToSecond] = useLocalStorage(key,initialValue);
+    
     const change = (evt) => {
         const valueToUse = evt.target.type === "checkbox" ? evt.target.checked : evt.target.value
         setData({
@@ -33,44 +34,6 @@ export const useForm = (key, initialValue) => {
             })
             .catch(err => console.error(err))
     }
-    //!nav
-    const navigate = useNavigate();
-    const navBack = useNavigate();
-    const navLast = useNavigate();
-    const navToSecond = useNavigate();
-    const navigateBack = (e) => {
-        e.preventDefault();
-        navBack("/form-1");
-        setData({...data,
-            secondPage : !data.secondPage,
-            firstPage : !data.firstPage,
-            thirdPage : false,
-        })
-    }
-    const navigateForward = (e) => {
-        e.preventDefault();
-        navigate("contact")
-        setData({...data,
-            secondPage : !data.secondPage,
-            firstPage : !data.firstPage,
-        })
-    }
-    const navigateLast = (e) => {
-        e.preventDefault(e);
-        navLast("profile")
-        setData({...data,
-            secondPage : !data.secondPage,
-            thirdPage : !data.thirdPage,
-        })
-    }
-    const navigateToSecond = (e) => {
-        e.preventDefault();
-        navToSecond("contact");
-        setData({...data,
-            secondPage : !data.secondPage,
-            thirdPage : !data.thirdPage,
-        })
-    }
-    //!nav
-    return [data, change, submit, navigateBack, navigateForward,navigateLast,navigateToSecond]
+   
+    return [data, change, submit]
 }
