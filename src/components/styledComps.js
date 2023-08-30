@@ -283,3 +283,59 @@ form {
         color : royalblue;
     }
 `
+const secondFormKf = keyframes`
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 200% 50%;
+	}
+`
+
+
+export const SecondStyledForm = styled.div`
+height : 100vh;
+display : flex;
+justify-content : center;
+align-items : center;
+background-image : linear-gradient(to right, rgb(157, 197, 157),white);
+background-size : 150% 150%;
+animation : ${secondFormKf} 2s forwards;
+#container {
+    /* outline : 2px solid rgb(201, 147, 0); */
+    border-radius : 10px;
+    box-shadow : 4px 4px 4px rgb(255, 211, 92);
+    height : 20rem;
+    width : 40rem;
+    background-color : white;
+    form {
+        display : flex;
+        border-radius : 10px;
+        justify-content : space-between;
+        height : 20rem;
+        background-color : rgb(255, 211, 92);
+        #firstColumn {
+            border-right : 2px solid rgb(201, 147, 0);
+            padding-right : 2rem;
+            display : flex;
+            justify-content : flex-start;
+            div {
+                padding-left : 1rem;
+                padding-top : 1rem;
+            }
+        }
+        #secondColumn {
+            padding-right : 2rem;
+            display : flex;
+            justify-content : flex-start;
+            div {
+                padding-left : 1rem;
+                padding-top : 1rem;
+            }
+        }
+    }
+}
+`
