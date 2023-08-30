@@ -143,11 +143,14 @@ display  : flex;
 flex-direction  : column;
 justify-content : center;
 align-items : center;
+background-color :azure;
 main {
-    border : 2px solid black;
+    border : 2px solid lightblue;
     width : 40rem;
     height : 40rem;
+    background-color : rgb(39, 39, 39);
     h3 {
+        color : white;
         text-align : center;
         margin-bottom : 5rem;
         padding-top  :2rem;
@@ -182,8 +185,12 @@ form {
     display : flex;
     flex-direction  : column;
     align-items : center;
+    input {
+        background-color : white; 
+    }
     select {
        margin-top : 4rem;
+       background-color : white; 
     }
     #secondPageButtons {
         margin-top : 6rem;
