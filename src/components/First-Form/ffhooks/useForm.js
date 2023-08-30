@@ -37,12 +37,14 @@ export const useForm = (key, initialValue) => {
     const navigate = useNavigate();
     const navBack = useNavigate();
     const navLast = useNavigate();
+    const navToSecond = useNavigate();
     const navigateBack = (e) => {
         e.preventDefault();
         navBack("/form-1");
         setData({...data,
             secondPage : !data.secondPage,
             firstPage : !data.firstPage,
+            thirdPage : false,
         })
     }
     const navigateForward = (e) => {
@@ -61,6 +63,14 @@ export const useForm = (key, initialValue) => {
             thirdPage : !data.thirdPage,
         })
     }
+    const navigateToSecond = (e) => {
+        e.preventDefault();
+        navToSecond("contact");
+        setData({...data,
+            secondPage : !data.secondPage,
+            thirdPage : !data.thirdPage,
+        })
+    }
     //!nav
-    return [data, change, submit, navigateBack, navigateForward,navigateLast]
+    return [data, change, submit, navigateBack, navigateForward,navigateLast,navigateToSecond]
 }

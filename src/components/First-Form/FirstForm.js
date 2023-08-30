@@ -13,14 +13,13 @@ const initialValue = {
     state: "",
     username: "",
     password: "",
-    terms: false,
     firstPage: true,
     secondPage: false,
     thirdPage: false,
 }
 
 export default function FirstForm(props) {
-    const [data, change, submit, navigateBack, navigateForward, navigateLast] = useForm("Form-1", initialValue)
+    const [data, change, submit, navigateBack, navigateForward, navigateLast,navigateToSecond] = useForm("Form-1", initialValue)
     const [state, setState] = useState(states);
 
 
@@ -79,6 +78,14 @@ export default function FirstForm(props) {
                                 <Input type="text" value={data.username} onChange={change} id ="username" name = "username" placeholder="username"/>
                                 <Label htmlFor="username">Username</Label>
                                 </FormGroup>
+                                <FormGroup floating>
+                                <Input type="text" value={data.password} onChange={change} id ="password" name = "password" placeholder="password"/>
+                                <Label htmlFor="password">password</Label>
+                                </FormGroup>
+                                <div id = "thirdPageButtons">
+                                <button onClick={navigateToSecond}>Back</button>
+                                <input type = "submit" id = "submit" />
+                                </div>
                             </div>} />
                         </Routes>}
                 </Form>
