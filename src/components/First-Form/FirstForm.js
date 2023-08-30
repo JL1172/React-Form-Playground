@@ -12,14 +12,17 @@ const initialValue = {
     email: "",
     state: "",
     username: "",
-    passord : "",
+    password: "",
     terms: false,
+    firstPage: true,
+    secondPage: false,
+    thirdPage: false,
 }
 
 export default function FirstForm(props) {
-    const [data, change, submit,navigateBack, navigateForward,navigateLast,firstPage,secondPage] = useForm("Form-1", initialValue)
+    const [data, change, submit, navigateBack, navigateForward, navigateLast] = useForm("Form-1", initialValue)
     const [state, setState] = useState(states);
-  
+
 
     return (
         <StyledForm>
@@ -31,45 +34,54 @@ export default function FirstForm(props) {
                     <section>Profile</section>
                 </div>
                 <Form onSubmit={submit}>
-                    {firstPage ? <div>
-                         <FormGroup floating>
-                        <Input type="text" placeholder="first name" id="fname" name="fname" value={data.fname} onChange={change} />
-                        <Label htmlFor="fname">First Name</Label>
-                    </FormGroup>
-                    <FormGroup floating>
-                        <Input type="text" placeholder="last name" id="lname" name="lname" value={data.lname} onChange={change} />
-                        <Label htmlFor="lname">Last Name</Label>
-                    </FormGroup>
-                    </div> : 
-                    //! second page 
-                   <div>
-                    <Routes>
-                        <Route path="contact" element={
-                            <div>
-                                <FormGroup floating>
-                                    <Input type="email" placeholder="email@email.com" id="email" name="email" value={data.email} onChange={change} />
-                                    <Label htmlFor="email">Email</Label>
-                                </FormGroup>
-                                <FormGroup row>
-                                    <Label htmlFor="state">Select State</Label>
-                                    <Input name="state" onChange={change} value={data.state} id="state" type="select">
-                                        <option value="">Select State</option>
-                                        {state.map((n, i) => {
-                                            return <option key={i} value={n}>{n}</option>
-                                        })}
-                                    </Input>
-                                </FormGroup></div>
-                        } />
-                        <Route path = "profile" element = {<div>
-
-                        </div>} />
-                    </Routes>
-                    <button onClick={navigateBack}>Back</button>
-                    <button onClick={navigateLast}>Next</button></div>
-                    //! second page 
+                    {data.firstPage && <div>
+                        <FormGroup floating>
+                            <Input type="text" placeholder="first name" id="fname" name="fname" value={data.fname} onChange={change} />
+                            <Label htmlFor="fname">First Name</Label>
+                        </FormGroup>
+                        <FormGroup floating>
+                            <Input type="text" placeholder="last name" id="lname" name="lname" value={data.lname} onChange={change} />
+                            <Label htmlFor="lname">Last Name</Label>
+                        </FormGroup>
+                        <div id = "firstPageButton">
+                        <button onClick={navigateForward}>Next</button>
+                        </div>
+                    </div>}
+                    {data.secondPage &&
+                        <div>
+                            <Routes>
+                                <Route path="contact" element={
+                                    <div>
+                                        <FormGroup floating>
+                                            <Input type="email" placeholder="email@email.com" id="email" name="email" value={data.email} onChange={change} />
+                                            <Label htmlFor="email">Email</Label>
+                                        </FormGroup>
+                                        <FormGroup row>
+                                            <Input name="state" onChange={change} value={data.state} id="state" type="select">
+                                                <option value="">Select State</option>
+                                                {state.map((n, i) => {
+                                                    return <option key={i} value={n}>{n}</option>
+                                                })}
+                                            </Input>
+                                        </FormGroup></div>
+                                } />
+                            </Routes>
+                            <div id = "secondPageButtons">
+                            <button onClick={navigateBack}>Back</button>
+                            <button onClick={navigateLast}>Next</button>
+                            </div>
+                            </div>
                     }
+                    {data.thirdPage &&
+                        <Routes>
+                            <Route path="profile" element={<div>
+                                <FormGroup floating>
+                                <Input type="text" value={data.username} onChange={change} id ="username" name = "username" placeholder="username"/>
+                                <Label htmlFor="username">Username</Label>
+                                </FormGroup>
+                            </div>} />
+                        </Routes>}
                 </Form>
-                {firstPage && <button onClick={navigateForward}>Next</button>}
             </main>
         </StyledForm>
     )

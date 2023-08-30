@@ -170,12 +170,19 @@ form {
     display : flex;
     flex-direction  : column;
     align-items : center;
-    
-    input, label {
-        margin : 1rem;
-    }
     select {
-        width : 20rem;
+       margin-top : 4rem;
+    }
+    #secondPageButtons {
+        margin-top : 6rem;
+        display : flex;
+        justify-content : space-between;
+    }
+    #firstPageButton {
+        margin-top : 9rem;
+        display : flex;
+        margin-left : 15rem;
+        justify-content : flex-end;
     }
 }
 }
