@@ -67,12 +67,12 @@ export default function FirstForm(props) {
                             <Input type="text" placeholder="first name" id="fname" name="fname" value={data.fname} onChange={change} />
                             <Label htmlFor="fname">First Name</Label>
                         </FormGroup>
-                        {error.fname && <Alert color="danger" style={{ color: "red", }}>*{error.fname}</Alert>}
+                        {error.fname && <p color="danger" style={{ color: "red", }}>*{error.fname}</p>}
                         <FormGroup floating>
                             <Input type="text" placeholder="last name" id="lname" name="lname" value={data.lname} onChange={change} />
                             <Label htmlFor="lname">Last Name</Label>
                         </FormGroup>
-                        {error.lname && <Alert color="danger" style={{ color: "red" }}>*{error.lname}</Alert>}
+                        {error.lname && <p color="danger" style={{ color: "red" }}>*{error.lname}</p>}
                         <div id="firstPageButton">
                             <button onClick={setPageData}>Next</button>
                         </div>
@@ -86,6 +86,7 @@ export default function FirstForm(props) {
                                             <Input type="email" placeholder="email@email.com" id="email" name="email" value={data.email} onChange={change} />
                                             <Label htmlFor="email">Email</Label>
                                         </FormGroup>
+                                        {error.email && <p color="danger" style={{ color: "red" }}>*{error.email}</p>}
                                         <FormGroup row>
                                             <Input name="state" onChange={change} value={data.state} id="state" type="select">
                                                 <option value="">Select State</option>
@@ -93,7 +94,8 @@ export default function FirstForm(props) {
                                                     return <option key={i} value={n}>{n}</option>
                                                 })}
                                             </Input>
-                                        </FormGroup></div>
+                                        </FormGroup>
+                                        {error.state && <p color="danger" style={{ color: "red" }}>*{error.state}</p>}</div>
                                 } />
                             </Routes>
                             <div id="secondPageButtons">
@@ -109,10 +111,12 @@ export default function FirstForm(props) {
                                     <Input type="text" value={data.username} onChange={change} id="username" name="username" placeholder="username" />
                                     <Label htmlFor="username">Username</Label>
                                 </FormGroup>
+                                {error.username && <p color="danger" style={{ color: "red" }}>*{error.username}</p>}
                                 <FormGroup floating>
                                     <Input type="text" value={data.password} onChange={change} id="password" name="password" placeholder="password" />
                                     <Label htmlFor="password">password</Label>
                                 </FormGroup>
+                                {error.password && <p color="danger" style={{ color: "red" }}>*{error.password}</p>}
                                 <div id="thirdPageButtons">
                                     <button onClick={changePageToSecond}>Back</button>
                                     <input disabled={disabled} type="submit" id="submit" />
