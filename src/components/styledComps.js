@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import {keyframes} from "styled-components"
 
+
 const kf = keyframes`
 0% {
  color : rgb(39, 39, 39);
@@ -43,6 +44,7 @@ const activekf = keyframes`
 
 export const StyledHeader = styled.div`
 background-color : rgb(39, 39, 39);
+font-family: 'Cinzel', serif;
 height : 5rem;
 border-bottom : 4px solid gray;
 display : flex;
@@ -61,6 +63,7 @@ a {
 export const StyledHome = styled.div`
 background-color : rgb(92, 92, 92);
 height : 100vh;
+font-family: 'Cinzel', serif;
 background-image : linear-gradient(-45deg,rgb(39, 39, 39)
 ,rgb(156, 153, 153),rgb(235, 232, 232),rgb(156, 153, 153) );
 background-size : 400% 400% ;
@@ -157,6 +160,7 @@ main {
         text-align : center;
         margin-bottom : 5rem;
         padding-top  :2rem;
+        font-family: 'Nanum Myeongjo', serif;
     }
 >div {
     display : flex;
@@ -305,6 +309,9 @@ align-items : center;
 background-image : linear-gradient(to right, rgb(157, 197, 157),white);
 background-size : 150% 150%;
 animation : ${secondFormKf} 2s forwards;
+h3 {
+    font-family: 'Nanum Myeongjo', serif;
+}
 #container {
     /* outline : 2px solid rgb(201, 147, 0); */
     border-radius : 10px;

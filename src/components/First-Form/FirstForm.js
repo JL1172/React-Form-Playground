@@ -38,10 +38,8 @@ export default function FirstForm(props) {
     return (
         <StyledForm first={pageData.firstPage} second={pageData.secondPage} third={pageData.thirdPage}>
             <main>
-                {!pageData.firstPage && !pageData.secondPage && !pageData.thirdPage && !pageData.fourthPage &&
-                    <button className="reset" onClick={reset}>First Page</button>
-                }
-
+              
+                    <span onClick={reset}><img style = {{width : "20px",mixBlendMode : "color-burn"}} src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZSP1d2yFf7FiNcovwEvIzU0eAiQ3WjMfhGBkuVF3VrXqAXUQKBUpQ-6ypc9ij1JHD8o&usqp=CAU"/></span>
                 <h3>Registration Form</h3>
                 <div>
                     <section>Info</section>
