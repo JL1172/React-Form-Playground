@@ -319,23 +319,42 @@ animation : ${secondFormKf} 2s forwards;
         background-color : rgb(255, 211, 92);
         #firstColumn {
             border-right : 2px solid rgb(201, 147, 0);
-            padding-right : 2rem;
+            padding-right : 1.3rem;
             display : flex;
             justify-content : flex-start;
             div {
                 padding-left : 1rem;
-                padding-top : 1rem;
+                padding-top : 1.7rem;
             }
         }
         #secondColumn {
             padding-right : 2rem;
             display : flex;
             justify-content : flex-start;
-            div {
-                padding-left : 1rem;
+            .wrapper {
+                display : flex;
+                flex-direction : column;
                 padding-top : 1rem;
+                justify-content : space-around;
+                #lname {
+                    display : flex;
+                }
+                #fname {
+                    display : flex;
+                }
+                .radio {
+                    display : flex;
+                }
             }
         }
     }
+}
+input[type=text] {
+    border  : none;
+    height : 30px;
+    border-radius : 5px;
+}
+label,span {
+    font-family : Arial, Helvetica, sans-serif;
 }
 `
