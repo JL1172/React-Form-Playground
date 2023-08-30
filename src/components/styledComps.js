@@ -229,4 +229,14 @@ form {
             border-color : royalblue;
         }
     }
+.reset {
+    background-color : white;
+        border : none;
+        border-radius : 5px;
+        width : fit-content;
+        color : black;
+        &:active {
+            color : royalblue;
+        }
+    }
 `

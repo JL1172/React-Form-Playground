@@ -32,11 +32,16 @@ export default function FirstForm(props) {
     return (
         <StyledForm first = {pageData.firstPage} second = {pageData.secondPage} third = {pageData.thirdPage}>
             <main>
+            {!pageData.firstPage && !pageData.secondPage && !pageData.thirdPage && !pageData.fourthPage && 
+                 <button className = "reset" onClick={reset}>First Page</button>
+            }
+       
                 <h3>Registration Form</h3>
                 <div>
                     <section>Info</section>
                     <section>Contact</section>
                     <section>Profile</section>
+                    
                 </div>
                 <Form onSubmit={submit}>
                     {pageData.firstPage && <div>
@@ -97,7 +102,7 @@ export default function FirstForm(props) {
                 </Form>
                 {pageData.fourthPage &&
                 <div> 
-                    <button onClick={reset}>Reset</button>
+                    <button className = "reset" onClick={reset}>Reset</button>
                    { afterData.map((n,i)=> {
                         console.log(n)
                          return <div>

@@ -53,7 +53,7 @@ export const useFirst = (key,initialValue) => {
     const reset = (e) => {
         e.preventDefault();
         setData(initialValue);
-        navigate("/form-1")
+        navigate("/form-1");
     }
     return [data,changePage,changePageBack,changePageToLast,changePageToSecond,completeForm,reset];
 }
