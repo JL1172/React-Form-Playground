@@ -170,11 +170,11 @@ main {
     z-index : 1;
    }
    section:nth-of-type(1) {
-    background-color : ${props => props.first ? "royalblue" : "white"};
+    background-color : ${props => props.first ? "royalblue" : "royalblue"};
     color : ${props => props.first ? "white" : "black"};  
    }
    section:nth-of-type(2) {
-    background-color : ${props => props.second ? "royalblue" : "white"}; 
+    background-color : ${props => props.second ? "royalblue" : props.third ? "royalblue" : "white"}; 
     color : ${props => props.second ? "white" : "black"};  
    }
    section:nth-of-type(3) {
