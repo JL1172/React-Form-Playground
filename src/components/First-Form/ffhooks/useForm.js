@@ -1,21 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "./useLocalStorage";
-
+import { schema } from "../schema";
+import * as yup from 'yup';
 
 
 export const useForm = (key, initialValue,completeForm) => {
     const [data, setData] = useLocalStorage(key,initialValue);
     const [afterData,setAfterData] = useState([]);
-    
+    const [error,setError] = useState({  fname: "",
+    lname: "",
+    email: "",
+    state: "",
+    username: "",
+    password: "",})
+
+    const formValidation = (name,value) => {
+        yup.reach(schema,name).validate(value)
+        .then(()=> setError({...error, [name] : ""}))
+        .catch(err=> setError({...error, [name] : err.errors[0]}))
+    }
+
     const change = (evt) => {
+        formValidation(evt.target.name,evt.target.value)
         setData({
             ...data,
             [evt.target.name]: evt.target.value,
         })
     }
-
     const submit = (evt) => {
         evt.preventDefault();
         const newUser = {
@@ -34,5 +47,7 @@ export const useForm = (key, initialValue,completeForm) => {
             .catch(err => console.error(err))
             .finally(()=> setData(initialValue))
     }
-    return [data, change, submit,afterData]
+
+
+    return [data, change, submit,afterData,error]
 }
