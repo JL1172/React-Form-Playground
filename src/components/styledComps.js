@@ -77,15 +77,16 @@ section {
     justify-content  : space-between;
     font-size : 25px;
     a {
-        background-color : rgb(157, 168, 206);
+        background-color : white;
         outline : 2px solid rgb(39, 39, 39);
-        color : white;
+        color : black;
         text-decoration : none;
         border-radius : 20px;
         padding : .3rem;
         &:hover {
-            color :  rgb(157, 168, 206);
-            background-color : white;
+            color :  white;
+            background-color : rgb(39, 39, 39);
+            outline-offset  : 4px;
             transform : scale(1.1);
         }
         &:active {
@@ -146,9 +147,11 @@ align-items : center;
 background-color :azure;
 main {
     border : 2px solid lightblue;
-    width : 40rem;
+    width : 35rem;
     height : 40rem;
     background-color : rgb(39, 39, 39);
+    outline : 2px solid lightblue;
+    outline-offset : 4px;
     h3 {
         color : white;
         text-align : center;
@@ -245,5 +248,8 @@ form {
         &:active {
             color : royalblue;
         }
+    }
+    #fourth {
+        color : white;
     }
 `
