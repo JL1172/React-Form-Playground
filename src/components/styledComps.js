@@ -141,7 +141,7 @@ input {
 export const StyledForm = styled.div`
 height : 100vh;
 display  : flex;
-flex-direction  : column;
+flex-direction  : row;
 justify-content : center;
 align-items : center;
 background-color :azure;
@@ -199,18 +199,18 @@ form {
        background-color : white; 
     }
     #secondPageButtons {
-        margin-top : 6rem;
+        margin-top : 5rem;
         display : flex;
         justify-content : space-between;
     }
     #firstPageButton {
-        margin-top : 9rem;
+        margin-top : 6rem;
         display : flex;
         margin-left : 15rem;
-        justify-content : flex-end;
+        align-self : flex-end;
     }
     #thirdPageButtons {
-        margin-top : 9rem;
+        margin-top : 7rem;
         display : flex;
         justify-content : space-between;
     }
@@ -248,11 +248,38 @@ form {
         border-radius : 5px;
         width : fit-content;
         color : black;
+        height : fit-content;
+        align-items : center;
+        display : flex;
+        align-self : flex-end;
         &:active {
             color : royalblue;
         }
     }
     #fourth {
         color : white;
+        display : flex;
+        flex-direction :column;
+        justify-content : space-between;
+    }
+    #container {
+        border : 2px solid white;
+        height : 20rem;
+        display : flex;
+        justify-content : flex-start;
+        padding-left : 1rem;
+        div {
+            border-bottom : 1px solid white;
+        }
+    }
+    #card {
+        display : flex;
+        height : fit-content;
+        width : 18rem;
+        margin-right : .2rem;
+        margin-top : .5rem;
+    }
+    .span {
+        color : royalblue;
     }
 `

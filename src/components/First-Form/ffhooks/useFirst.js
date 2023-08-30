@@ -50,10 +50,10 @@ export const useFirst = (key,initialValue) => {
         secondPage : false,
         thirdPage : false,});
     }
-    const reset = (e) => {
-        e.preventDefault();
+    const reset = () => {
         setData(initialValue);
         navigate("/form-1");
+        
     }
     return [data,changePage,changePageBack,changePageToLast,changePageToSecond,completeForm,reset];
 }

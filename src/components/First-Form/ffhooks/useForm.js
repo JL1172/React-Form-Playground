@@ -6,7 +6,7 @@ import { schema } from "../schema";
 import * as yup from 'yup';
 
 
-export const useForm = (key, initialValue,completeForm) => {
+export const useForm = (key, initialValue,completeForm,reset) => {
     const [data, setData] = useLocalStorage(key,initialValue);
     const [afterData,setAfterData] = useState([]);
     const [error,setError] = useState({  fname: "",
@@ -47,7 +47,11 @@ export const useForm = (key, initialValue,completeForm) => {
             .catch(err => console.error(err))
             .finally(()=> setData(initialValue))
     }
+    const resetFully = (e) => {
+        e.preventDefault();
+        reset();
+        setAfterData([]);
+    }
 
-
-    return [data, change, submit,afterData,error]
+    return [data, change, submit,afterData,error,resetFully]
 }

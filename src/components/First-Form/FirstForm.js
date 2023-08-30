@@ -1,6 +1,6 @@
 import { StyledForm } from "../styledComps"
 import { useForm } from "./ffhooks/useForm"
-import Reactstrap, { Form, FormGroup, Input, Label, Alert, Placeholder } from "reactstrap";
+import Reactstrap, { CardText,Card, CardBody, CardTitle, Form, FormGroup, Input, Label, Alert, Placeholder } from "reactstrap";
 import { useEffect, useState } from "react";
 import { useFirst } from "./ffhooks/useFirst";
 import { states } from "./fifteyState";
@@ -28,10 +28,10 @@ const initialPageData = {
 export default function FirstForm(props) {
     const [pageData, setPageData, changePageBack, changePageToLast,
         changePageToSecond, completeForm, reset] = useFirst("First", initialPageData);
-    const [data, change, submit, afterData, error] = useForm("Form-1", initialValue, completeForm, reset);
+    const [data, change, submit, afterData, error,resetFully] = useForm("Form-1", initialValue, completeForm, reset);
     const [disabled, setDisabled] = useState(true)
     useEffect(() => {
-        schema.isValid(data).then(valid => setDisabled(!disabled))
+        schema.isValid(data).then(valid => setDisabled(!valid))
     }, [data])
 
 
@@ -113,7 +113,7 @@ export default function FirstForm(props) {
                                 </FormGroup>
                                 {error.username && <p color="danger" style={{ color: "red" }}>*{error.username}</p>}
                                 <FormGroup floating>
-                                    <Input type="text" value={data.password} onChange={change} id="password" name="password" placeholder="password" />
+                                    <Input type="password" value={data.password} onChange={change} id="password" name="password" placeholder="password" />
                                     <Label htmlFor="password">password</Label>
                                 </FormGroup>
                                 {error.password && <p color="danger" style={{ color: "red" }}>*{error.password}</p>}
@@ -125,15 +125,25 @@ export default function FirstForm(props) {
                         </Routes>}
                 </Form>
                 {pageData.fourthPage &&
-                    <div >
-                        <button className="reset" onClick={reset}>Reset</button>
+                    <div id = "container">
                         {afterData.map((n, i) => {
-                            console.log(n)
                             return <div id="fourth">
-                                <div key={i}>{n.username}</div>
-                                <div key={i}>{n.password}</div>
+                                <div key={i * Math.random()* 112344}><span className="span">Username :</span> {n.username}</div>
+                                <div key={i * Math.random()* 112344}><span className="span">Password :</span> {n.password}</div>
+                                <div key={i * Math.random()* 112344}><span className="span">First Name :</span> {n.fname}</div>
+                                <div key={i * Math.random()* 112344}><span className="span">Email :</span> {n.email}</div>
+                                <div key={i * Math.random()* 112344}><span className="span">State :</span> {n.state}</div>
                             </div>
-                        })}</div>}
+                        })}
+                        <button className="reset" onClick={resetFully}>Reset</button>
+                                <Card id = "card">
+                                    <CardTitle>About This Form</CardTitle>
+                                    <CardBody>
+                                        Thanks {afterData[0].fname} for using this form! This form practices data persistence, with localStorage, custom hooks, reactstrap, styled-components, axios for the post
+                                            request (for displaying this user info), yup for the form validation, and react router for navigating. Hope you enjoyed.
+                                    </CardBody>
+                                </Card>
+                        </div>}
             </main>
         </StyledForm>
     )
