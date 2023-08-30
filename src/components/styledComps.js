@@ -196,6 +196,37 @@ form {
         margin-left : 15rem;
         justify-content : flex-end;
     }
+    #thirdPageButtons {
+        margin-top : 9rem;
+        display : flex;
+        justify-content : space-between;
+    }
+    button {
+        background-color : royalblue;
+        border : none;
+        border-radius : 5px;
+        width : 50px;
+        color : white;
+        &:active {
+            background-color : white;
+            color : royalblue;
+            transform : scale(1.1); 
+            border-color : royalblue;
+        }
+    }
 }
 }
+#submit {
+        background-color : royalblue;
+        border : none;
+        border-radius : 5px;
+        width : fit-content;
+        color : white;
+        &:active {
+            background-color : white;
+            color : royalblue;
+            transform : scale(1.1); 
+            border-color : royalblue;
+        }
+    }
 `
