@@ -3,8 +3,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "./useLocalStorage";
 
-export const useForm = (key, initialValue) => {
+
+
+export const useForm = (key, initialValue,completeForm) => {
     const [data, setData] = useLocalStorage(key,initialValue);
+    const [afterData,setAfterData] = useState([]);
     
     const change = (evt) => {
         setData({
@@ -25,10 +28,11 @@ export const useForm = (key, initialValue) => {
         }
         axios.post("https://reqres.in/api/users", newUser)
             .then((res) => {
-                console.log(res)
+                setAfterData([...afterData, res.data]);
+                completeForm();
             })
             .catch(err => console.error(err))
+            .finally(()=> setData(initialValue))
     }
-   
-    return [data, change, submit]
+    return [data, change, submit,afterData]
 }

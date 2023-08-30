@@ -7,6 +7,7 @@ import { states } from "./fifteyState";
 import { useNavigate } from "react-router-dom";
 import { Routes, Route, Link } from "react-router-dom";
 
+
 const initialValue = {
     fname: "",
     lname: "",
@@ -20,13 +21,14 @@ const initialPageData = {
     firstPage: true,
     secondPage: false,
     thirdPage: false,
+    fourthPage : false,
 }
 
 export default function FirstForm(props) {
-    const [data, change, submit] = useForm("Form-1", initialValue)
     const [pageData,setPageData,changePageBack,changePageToLast,
-        changePageToSecond] = useFirst("First",initialPageData)
-    
+        changePageToSecond,completeForm,reset] = useFirst("First",initialPageData)
+        const [data, change, submit,afterData] = useForm("Form-1", initialValue,completeForm,reset)
+
     return (
         <StyledForm>
             <main>
@@ -93,6 +95,16 @@ export default function FirstForm(props) {
                             </div>} />
                         </Routes>}
                 </Form>
+                {pageData.fourthPage &&
+                <div> 
+                    <button onClick={reset}>Reset</button>
+                   { afterData.map((n,i)=> {
+                        console.log(n)
+                         return <div>
+                        <div key = {i}>{n.username}</div>
+                        <div key = {i}>{n.password}</div>
+                        </div>
+                    })}</div>}
             </main>
         </StyledForm>
     )

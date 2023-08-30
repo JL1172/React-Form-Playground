@@ -42,5 +42,18 @@ export const useFirst = (key,initialValue) => {
             thirdPage : !data.thirdPage,
         })
     }
-    return [data,changePage,changePageBack,changePageToLast,changePageToSecond];
+    const completeForm = () => {
+        navigate("/form-1")
+        setData({...data,
+        fourthPage : !data.fourthPage,
+        firstPage : false,
+        secondPage : false,
+        thirdPage : false,});
+    }
+    const reset = (e) => {
+        e.preventDefault();
+        setData(initialValue);
+        navigate("/form-1")
+    }
+    return [data,changePage,changePageBack,changePageToLast,changePageToSecond,completeForm,reset];
 }
