@@ -163,6 +163,18 @@ main {
     border-radius : 10rem;
     z-index : 1;
    }
+   section:nth-of-type(1) {
+    background-color : ${props => props.first ? "royalblue" : "white"};
+    color : ${props => props.first ? "white" : "black"};  
+   }
+   section:nth-of-type(2) {
+    background-color : ${props => props.second ? "royalblue" : "white"}; 
+    color : ${props => props.second ? "white" : "black"};  
+   }
+   section:nth-of-type(3) {
+    background-color : ${props => props.third ? "royalblue" : "white"}; 
+    color : ${props => props.third ? "white" : "black"};  
+   }
 }
 
 form {

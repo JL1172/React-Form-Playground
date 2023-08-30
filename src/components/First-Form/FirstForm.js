@@ -30,7 +30,7 @@ export default function FirstForm(props) {
         const [data, change, submit,afterData] = useForm("Form-1", initialValue,completeForm,reset)
 
     return (
-        <StyledForm>
+        <StyledForm first = {pageData.firstPage} second = {pageData.secondPage} third = {pageData.thirdPage}>
             <main>
                 <h3>Registration Form</h3>
                 <div>
