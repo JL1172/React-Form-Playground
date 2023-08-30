@@ -374,4 +374,20 @@ input[type=radio]:checked {
 label,span {
     font-family : Arial, Helvetica, sans-serif;
 }
+#toSub {
+    input {
+        background-color : white;
+    }
+}
+#lastCard {
+    width : 15rem;
+    height : 5rem;
+    display : flex;
+    justify-content :center;
+    align-items : center;
+    flex-direction : row;
+    img {
+        margin-right : .2rem;
+    }
+}
 `
