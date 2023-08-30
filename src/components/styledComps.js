@@ -299,6 +299,7 @@ const secondFormKf = keyframes`
 export const SecondStyledForm = styled.div`
 height : 100vh;
 display : flex;
+flex-direction  :column;
 justify-content : center;
 align-items : center;
 background-image : linear-gradient(to right, rgb(157, 197, 157),white);
@@ -307,7 +308,6 @@ animation : ${secondFormKf} 2s forwards;
 #container {
     /* outline : 2px solid rgb(201, 147, 0); */
     border-radius : 10px;
-    box-shadow : 4px 4px 4px rgb(255, 211, 92);
     height : 20rem;
     width : 40rem;
     background-color : white;
@@ -316,10 +316,10 @@ animation : ${secondFormKf} 2s forwards;
         border-radius : 10px;
         justify-content : space-between;
         height : 20rem;
-        background-color : rgb(255, 211, 92);
+        background-color :white;
         #firstColumn {
-            border-right : 2px solid rgb(201, 147, 0);
-            padding-right : 1.3rem;
+            border-right : 2px solid rgb(157, 197, 157) ;
+            padding-right : 1rem;
             display : flex;
             justify-content : flex-start;
             div {
@@ -336,8 +336,10 @@ animation : ${secondFormKf} 2s forwards;
                 flex-direction : column;
                 padding-top : 1rem;
                 justify-content : space-around;
+                align-items : flex-start;
                 #lname {
                     display : flex;
+                    align-items  : center;
                 }
                 #fname {
                     display : flex;
@@ -349,11 +351,19 @@ animation : ${secondFormKf} 2s forwards;
         }
     }
 }
-input[type=text] {
-    border  : none;
-    height : 30px;
+input {
+    border  : 2px solid lightblue;
     border-radius : 5px;
 }
+input[type=radio] {
+    appearance: none;
+         padding: 10px;
+         background-color: white;
+         border-radius:50%;
+}
+input[type=radio]:checked {
+         background-color: rgb(157, 197, 157);
+      }
 label,span {
     font-family : Arial, Helvetica, sans-serif;
 }

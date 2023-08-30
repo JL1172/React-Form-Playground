@@ -3,6 +3,7 @@ import { SecondStyledForm } from "../styledComps"
 export default function SecondForm(props) {
     return (
         <SecondStyledForm>
+            <h3>Tall Oaks Club</h3>
             <div id="container">
                 <form>
                     <div id="firstColumn">
@@ -24,10 +25,10 @@ export default function SecondForm(props) {
                                 <input type="text" id="lname" name="lname" placeholder="" />
                             </div>
                             <div className="radio">
-                                <span>Football</span><input type="radio" name="sport" value="football" />
+                                <span>18 - 25</span><input type="radio" name="sport" value="football" />
                             </div>
                             <div className="radio">
-                                <span>Soccer</span><input type="radio" name="sport" value="soccer" />
+                                <span>26+</span><input type="radio" name="sport" value="soccer" />
                             </div>
 
                         </div>
