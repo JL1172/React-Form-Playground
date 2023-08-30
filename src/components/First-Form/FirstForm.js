@@ -49,14 +49,14 @@ export default function FirstForm(props) {
                             color= {pageData.secondPage || pageData.thirdPage? "" : "light"}
                         size = "xs"
                         xs={12}
-                        style = {{height : "10px",width : "100px", marginTop : "1.5rem",color : "royalblue"}}
+                        style = {{height : "10px",width : "100px", marginTop : "1.5rem",color : "royalblue", transition : ".5s"}}
                     />
                     <section>Contact</section>
                     <Placeholder
                         color= {pageData.thirdPage ? "" : "light"}
                         size = "xs"
                         xs={12}
-                        style = {{height : "10px",width : "100px", marginTop : "1.5rem",color : "royalblue"}}
+                        style = {{height : "10px",width : "100px", marginTop : "1.5rem",color : "royalblue",transition : ".5s"}}
                     />
                     <section>Profile</section>
 

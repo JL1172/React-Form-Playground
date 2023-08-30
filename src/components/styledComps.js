@@ -171,15 +171,18 @@ main {
    }
    section:nth-of-type(1) {
     background-color : ${props => props.first ? "royalblue" : "royalblue"};
-    color : ${props => props.first ? "white" : "black"};  
+    color : ${props => props.first || props.second || props.third ? "white" : "black"};  
+    transition : .6s;
    }
    section:nth-of-type(2) {
     background-color : ${props => props.second ? "royalblue" : props.third ? "royalblue" : "white"}; 
-    color : ${props => props.second ? "white" : "black"};  
+    color : ${props => props.second ? "white" : props.third ? "white" : "black"};  
+    transition : .6s;
    }
    section:nth-of-type(3) {
     background-color : ${props => props.third ? "royalblue" : "white"}; 
     color : ${props => props.third ? "white" : "black"};  
+    transition : .6s;
    }
 }
 
