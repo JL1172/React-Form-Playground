@@ -13,9 +13,10 @@ export default function Home(props) {
             </div>
             <input value="View Forms" type="button" onClick={props.setVisible} />
             {props.visible &&
-                <section id="visible">
+                <section >
                     <Link to="form-1">Form-1</Link>
                     <Link to = "form-2">Form-2</Link>
+                    <Link to = "app-3">App-3</Link>
                 </section>
             }
         </StyledHome>

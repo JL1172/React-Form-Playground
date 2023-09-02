@@ -73,7 +73,7 @@ justify-content : center;
 align-items : center;
 flex-direction : column;
 section {
-    width : 15rem;
+    width : 20rem;
     height : fit-content;
     margin-top : 4rem;
     display : flex;
