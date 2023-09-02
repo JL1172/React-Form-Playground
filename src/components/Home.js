@@ -16,7 +16,7 @@ export default function Home(props) {
                 <section >
                     <Link to="form-1">Form-1</Link>
                     <Link to = "form-2">Form-2</Link>
-                    <Link to = "app-3">App-3</Link>
+                    <Link to = "app-3">Todo List</Link>
                 </section>
             }
         </StyledHome>

@@ -78,14 +78,14 @@ section {
     margin-top : 4rem;
     display : flex;
     justify-content  : space-between;
-    font-size : 25px;
+    font-size : 20px;
     a {
         background-color : white;
         outline : 2px solid rgb(39, 39, 39);
         color : black;
         text-decoration : none;
         border-radius : 20px;
-        padding : .3rem;
+        padding : .2rem;
         &:hover {
             color :  white;
             background-color : rgb(39, 39, 39);
