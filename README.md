@@ -59,4 +59,4 @@ This project is licensed under the **MIT License**.
 
 ---
 
-We hope you find this project insightful and educational! If you have any questions or feedback, please don't hesitate to get in touch. Happy coding! 🚀
+I hope you find this project insightful and educational! If you have any questions or feedback, please don't hesitate to get in touch. Happy coding! 🚀
