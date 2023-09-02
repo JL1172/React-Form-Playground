@@ -1,6 +1,6 @@
 # Form Management Project
 
-Welcome to the **Form Management Project**! This project is designed to demonstrate various form management techniques, including the reducing pattern, advanced state management, and local data persistence. By integrating technologies such as `localStorage`, custom hooks, `reactstrap`, `styled-components`, `axios` for making POST requests (to display user info), `yup` for form validation, and `react-router` for navigation, this project provides a comprehensive example of form handling in a React application.
+Welcome to the **Form Management Project**! This project is designed to demonstrate various form management techniques, including the reducing pattern, advanced state management, and local data persistence. By integrating technologies such as `localStorage`, custom hooks, `reactstrap`, `styled-components`, `axios` for making POST requests (to display user info), `yup` for form validation, and `react-router` for navigation, this project provides a comprehensive example of form handling in a React application. Additionally, I added a todo list application and its state is managed by React-Redux. Additionally, there is a settings mode in the todo list application that can manage the background color and general styling of the application. This application is a work in progress, therefore I will be added as I go along.
 
 ## Table of Contents
 
@@ -23,6 +23,7 @@ Welcome to the **Form Management Project**! This project is designed to demonstr
 - Making POST requests with `axios` to display user information
 - Form validation powered by `yup`
 - Navigation between different views using `react-router`
+- React Redux is utilized to maintain state in App-3
 
 ## Technologies Used
 
@@ -33,6 +34,7 @@ Welcome to the **Form Management Project**! This project is designed to demonstr
 - [axios](https://axios-http.com/)
 - [yup](https://github.com/jquense/yup)
 - [react-router](https://reactrouter.com/)
+- [react-redux]
 
 ## Getting Started
 
